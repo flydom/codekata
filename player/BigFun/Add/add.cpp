@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+#define  NumToStr(x)  (x + '0') 
+
 typedef unsigned int uint;
 
 uint GetNum(const string &str, uint index)
@@ -27,12 +29,12 @@ string Add(const string &left, const string &right)
 		carry_bit = temp_value / 10;
 
 		temp_value = temp_value % 10;
-		result[result.length() - 1 - i] = temp_value + '0';
+		result[result.length() - 1 - i] = NumToStr(temp_value);
 	}
 
 	if (carry_bit > 0)
 	{
-		result.insert(result.begin(), carry_bit + '0');
+		result.insert(result.begin(), NumToStr(carry_bit));
 	}
 
 	cout << ">:" <<  result << "\n";
